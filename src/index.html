@@ -2,6 +2,7 @@
 <html lang="ru">
  	<head>
     	<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
     	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     	<link href="css/normalize.css" rel="stylesheet">
     	<link href="css/style.css" rel="stylesheet">
@@ -12,24 +13,26 @@
   		<header class="page-header">
   			<h1 class="visually-hidden">Pink</h1>
   			<div class="page-header__logo">
-  				<img src="img/logo.svg" alt="pink" width="" height="">
+  				<img src="img/logo.svg" alt="pink" width="22" height="75">
   			</div>
-  			<nav class="main-nav main-nav--closed">
+  			<nav class="main-nav main-nav--closed main-nav--no-js">
   				<button class="main-nav__toogle" type="button">Открыть меню</button>
-  				<ul class="main-nav__list">
-  					<li class="main-nav__item">
-  						<a href="">Главная</a>
-  					</li>
-  					<li class="main-nav__item">
-						<a href="#">Фотографии</a>
-  					</li>
-  					<li class="main-nav__item">
-						<a href="#">Конкурс</a>
-  					</li>
-  					<li class="main-nav__item">
-						<a href="#">HTML Academy</a>
-  					</li>
-  				</ul>
+            <div class="main-nav__wrapper">
+      				<ul class="main-nav__list">
+      					<li class="main-nav__item">
+      						<a>Главная</a>
+      					</li>
+      					<li class="main-nav__item">
+    						  <a href="#">Фотографии</a>
+      					</li>
+      					<li class="main-nav__item">
+    						  <a href="#">Конкурс</a>
+      					</li>
+      					<li class="main-nav__item">
+    						  <a href="#">HTML Academy</a>
+      					</li>
+      				</ul>
+            </div>  
   			</nav>
   		</header>
 
