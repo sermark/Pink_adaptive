@@ -1,0 +1,109 @@
+.application {
+	.flexbox();
+	width: 100%;
+	flex-direction: column;
+}
+
+.application__title {
+	display: none;
+} 
+
+.application__hand{
+	width: auto;
+	height: 400px; //временно 
+	background-color: grey;
+}
+
+.application__wrapper{
+	.flexbox();
+	width: auto;
+	flex-direction: column;
+	align-items: center;
+	padding: 28px 28px;
+	background-color: #263240;
+}
+
+.application__list {
+	.ul-clear;
+	margin-top: 30px;
+	font-size: 0;
+}
+
+.application__item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  margin: 0 8px;
+}
+
+.application__link {
+	display: block;
+	height: 100%;
+	font-size: 0;
+	background-color: transparent;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+	&--mac {
+	    background-image: url('../img/logo-apple.svg');
+	  }
+
+	&--android {
+	    background-image: url('../img/logo-android.svg');
+	    background-position: center 11px;
+	  }
+
+	&--wp {
+	    background-image: url('../img/logo-microsoft.svg');
+	    background-position: center 14px;
+	  }
+}
+
+.application__text{
+	margin-top: 30px;
+	font-size: 14px;
+	line-height: 24px;
+	color:@color-white;
+	text-align: center;
+}
+
+@media @tablet-widths{
+
+	.application {
+		flex-direction: row-reverse;
+	}
+	
+	.application__hand{
+		width: 50%;
+	}
+
+	.application__wrapper{
+		width: 50%;
+	}
+	
+	.application__title {
+		display: block;
+		font-size: 40px;
+		vertical-align: 52px;
+		margin-top: 95px;
+		font-weight: normal;
+		color: @color-white;
+		text-align: center;
+	} 
+}
+
+@media @desktop-widths {
+
+	.application__hand{
+		width: 60%;
+	}
+
+	.application__wrapper{
+		width: 40%;
+	}
+
+	.application__title {
+		margin-top: 110px;
+	} 
+}
