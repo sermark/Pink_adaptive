@@ -1,0 +1,162 @@
+.information {
+	.flexbox();
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.information__title {
+	//order:1;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 115px;
+	font-family: "OpenSans Light", sans-serif;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: normal;
+	color: #283645;
+	text-align: center;
+}
+
+.information__title span{
+	display: inline-block;
+	margin-bottom: 22px;
+}
+
+.information__items{
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.information__images{
+	font-size: 0;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.information__list{
+	.ul-clear();
+}
+
+.information__item{
+	font-size: 0;
+	margin-bottom: 25px;
+}
+
+.information__item:last-child{
+	margin-bottom: 40px;
+}
+
+.information__item-title{
+	width: 100%;
+	display: inline-block;
+	font-family: "OpenSans", sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: bold;
+}
+
+.information__text{
+	display: inline-block;
+	margin-bottom: 0;
+	text-align: center;
+	max-width: 280px;
+	font-family: "OpenSans", sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: normal;
+}
+
+.information__image {
+	display: inline-block;
+	width: 157px; // временно
+	height: 277px; // временно
+	background-color: grey; // временно
+}
+
+.information__image:not(:last-child){
+	display: none;
+}
+
+@media @tablet-widths{
+	.information__title{
+		font-size: 40px;
+		line-height: 52px; 
+	}
+
+	.information__title span{
+		display: inline;
+		margin: 0;
+	}
+
+	.information__title br:first-child{
+		display: none;
+	}
+
+	.information__items{
+		width: 50%;
+		order: 3;
+		text-align: left;
+	}
+
+	.information__images{
+		width: 50%;
+		order: 2;
+	}
+
+	.information__text{
+		text-align: left;
+	}
+}
+
+@media @desktop-widths{
+	.information {
+		flex-direction: column;
+
+	}
+
+	.information__image:not(:last-child){
+		display: inline;
+	}
+
+	.information__items{
+		width: auto;
+		margin-left: 11%;
+		margin-right: 11%;
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	.information__images{
+		.flexbox();
+		width: auto;
+		justify-content: space-around;
+		margin-left: 11%;
+		margin-right: 11%;
+
+	}	
+
+	.information__list{
+		.flexbox();
+		width: auto;
+		justify-content: space-around;
+	}
+
+	.information__text{
+		max-width: 240px;
+		display: block;
+		margin-top: 25px;
+		text-align: center;
+		font-size: 18px;
+		line-height: 32px;
+	}
+
+	.information__item-title{
+		max-width: 240px;
+		display: block;
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+}

@@ -1,10 +1,22 @@
-.page-header {
-	background-color: #1d2631;
+.page-header{
+	width: auto;
+	height: auto;
+	background-image: url("../img/bg-back-mobile@1x.jpg");
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.page-header__wrapper {
+	background-color: rgba(29, 38, 49, 0.6);
 	.flexbox ();
 	justify-content: space-between;
 	padding-top: 20px;
 	flex-wrap: wrap;
 }
+
+
 
 .page-header__logo {
 	width: 50%;
@@ -116,8 +128,12 @@
 }
 
 @media @tablet-widths{
-	
+
 	.page-header{
+		background-image: url("../img/bg-back-tablet@1x.jpg");
+	}
+	
+	.page-header__wrapper{
 		padding-top: 27px;
 	}
 
@@ -141,6 +157,10 @@
 }
 
 @media @desktop-widths {
+
+	.page-header{
+		background-image: url("../img/bg-back-desktop@1x.jpg");
+	}	
 
 	.main-nav__toogle{
 		display: none;
