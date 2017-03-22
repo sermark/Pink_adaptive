@@ -9,8 +9,15 @@
 } 
 
 .application__hand{
+	position: relative;
 	width: auto;
-	min-height: 395px; //временно
+	min-height: 395px;
+}
+
+.application__hand img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 
 .application__wrapper{
@@ -77,13 +84,21 @@
 	}
 
 	.application__hand{
+		padding-top: 0;
 		width: 50%;
 		height: auto;
 		background-color: transparent;
 		background-image: none;
 	}
 
+	.application__hand img {
+		left: -50%;
+		z-index: 1;
+	}
+
 	.application__wrapper{
+		position: relative;
+		z-index: 2;
 		width: 50%;
 		background-color: transparent;
 	}
@@ -116,6 +131,10 @@
 
 	.application__hand{
 		width: 60%;
+	}
+
+	.application__hand img {
+		left: -10%;
 	}
 
 	.application__wrapper{

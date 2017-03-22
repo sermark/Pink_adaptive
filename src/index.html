@@ -15,7 +15,14 @@
         <div class="page-header__wrapper">
         	<h1 class="visually-hidden">Pink</h1>
         	<div class="page-header__logo">
-        		<img src="img/logo.svg" alt="pink" width="22" height="75">
+            <picture>
+                <source media="(min-width:960px)" 
+                srcset="img/logo-pink-white-desktop.svg">
+              <source media="(min-width:700px)" 
+                srcset="img/logo-pink-white-tablet.svg">
+              <img src="img/logo-pink-white-mobile.svg" alt="pink picture">
+            </picture>
+        		
         	</div>
         	<nav class="main-nav main-nav--closed main-nav--no-js">
         		<button class="main-nav__toogle" type="button">Открыть меню</button>
@@ -40,7 +47,17 @@
   		
   			<section class="application">
           <div class="application__hand">
-            <img src="img/iphone-hand-mobile@1x.p" alt="iPhone-hand" width="258" height="286">
+            <picture>
+              <source
+                media="(min-width: 960px)"
+                srcset="img/iphone-hand-desktop@1x.png 1x, img/iphone-hand-desktop@2x.png 2x">
+              <source
+                media="(min-width: 700px)"
+                srcset="img/iphone-hand-tablet@1x.png 1x, img/iphone-hand-tablet@2x.png 2x">
+              <img
+                src="img/iphone-hand-mobile@1x.png" alt=""
+                srcset="img/iphone-hand-mobile@2x.png 2x">
+            </picture>
           </div>
           <div class="application__wrapper">
     				<h2 class="application__title">Взгляните<br> на жизнь<br> иначе!</h2>
@@ -83,9 +100,45 @@
   				  </ul>
           </div>
           <div class="information__images">
-            <div class="information__image"><img src="" alt=""></div>
-            <div class="information__image"><img src="" alt=""></div>
-            <div class="information__image"><img src="" alt=""></div>
+            <div class="information__image">
+              <picture>
+                <source
+                  media="(min-width: 960px)"
+                  srcset="img/iphone-screen-1-desktop@1x.png 1x, img/iphone-screen-1-desktop@2x.png 2x">
+                <source
+                  media="(min-width: 700px)"
+                  srcset="img/iphone-screen-1-tablet@1x.png, img/iphone-screen-1-tablet@2x.png 2x">  
+                <img
+                  src="img/iphone-screen-mobile@1x.png" alt=""
+                  srcset="img/iphone-screen-mobile@2x.png 2x">
+              </picture>
+            </div>
+            <div class="information__image">
+              <picture>
+                <source
+                  media="(min-width: 960px)"
+                  srcset="img/iphone-screen-2-desktop@1x.png 1x, img/iphone-screen-2-desktop@2x.png 2x">
+                <source
+                  media="(min-width: 700px)"
+                  srcset="img/iphone-screen-2-tablet@1x.png, img/iphone-screen-2-tablet@2x.png 2x">  
+                <img
+                  src="img/iphone-screen-mobile@1x.png" alt=""
+                  srcset="img/iphone-screen-mobile@2x.png 2x">
+              </picture>
+            </div>
+            <div class="information__image">
+              <picture>
+                <source
+                  media="(min-width: 960px)"
+                  srcset="img/iphone-screen-3-desktop@1x.png 1x, img/iphone-screen-3-desktop@2x.png 2x">
+                <source
+                  media="(min-width: 700px)"
+                  srcset="img/iphone-screen-3-tablet@1x.png, img/iphone-screen-3-tablet@2x.png 2x">   
+                <img
+                  src="img/iphone-screen-mobile@1x.png" alt=""
+                  srcset="img/iphone-screen-mobile@2x.png 2x">
+              </picture>
+            </div>
           </div>  
   			</section>	
 
@@ -141,97 +194,99 @@
   			</section>
 
   			<section class="price">
-  				<table class="price__items">
-  					<tr>
-  						<th ></th>
-  						<th class="price__name">
-  							<span class="price__name-title">База</span>
-  							<span class="price__count">1.99 USD</span>
-  						</th>
-  						<th class="price__name price__name--hit">
-  							<span class="price__name-title">Стандарт</span>
-  							<span class="price__count">3.99 USD</span>
-  						</th>
-  						<th class="price__name">
-  							<span class="price__name-title">Анлим</span>
-  							<span class="price__count">9.99 USD</span>
-  						</th>
-  					</tr>
-  					<tr>
-  						<td class="price__option price__option--mobile-hidden">
-  							<span class="price__option-name">Розовый фильтр</span>
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  					</tr>
-  					<tr>
-  						<td class="price__option price__option--mobile-hidden">
-  							<span class="price__option-name">Смайлики</span>
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--no"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  					</tr>
-  					<tr>
-  						<td class="price__option price__option--mobile-hidden">
-  							<span class="price__option-name">Комментарии</span>
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--no"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--no"></span> 
-  						</td>
-  						<td class="price__option">
-  							
-  							<span class="price__marker price__marker--yes"></span> 
-  						</td>
-  					</tr>
-  				</table>
-          <div class="slider__toggles">
-            <i class="slider__toggle"></i>
-            <i class="slider__toggle slider__toggle--active"></i>
-            <i class="slider__toggle"></i>
+          <div class="price__wrapper">
+    				<table class="price__items">
+    					<tr>
+    						<th ></th>
+    						<th class="price__name">
+    							<span class="price__name-title">База</span>
+    							<span class="price__count">1.99 USD</span>
+    						</th>
+    						<th class="price__name price__name--hit">
+    							<span class="price__name-title">Стандарт</span>
+    							<span class="price__count">3.99 USD</span>
+    						</th>
+    						<th class="price__name">
+    							<span class="price__name-title">Анлим</span>
+    							<span class="price__count">9.99 USD</span>
+    						</th>
+    					</tr>
+    					<tr>
+    						<td class="price__option">
+    							<span class="price__option-name">Розовый фильтр</span>
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Розовый фильтр</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Розовый фильтр</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Розовый фильтр</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    					</tr>
+    					<tr>
+    						<td class="price__option price__option--mobile-hidden">
+    							<span class="price__option-name">Смайлики</span>
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Смайлики</span>
+    							<span class="price__marker price__marker--no"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Смайлики</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Смайлики</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    					</tr>
+    					<tr>
+    						<td class="price__option price__option--mobile-hidden">
+    							<span class="price__option-name">Комментарии</span>
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Комментарии</span>
+    							<span class="price__marker price__marker--no"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Комментарии</span>
+    							<span class="price__marker price__marker--no"></span> 
+    						</td>
+    						<td class="price__option">
+    							<span class="price__option-name price__option-name--hidden">Комментарии</span>
+    							<span class="price__marker price__marker--yes"></span> 
+    						</td>
+    					</tr>
+    				</table>
+            <div class="slider__toggles">
+              <i class="slider__toggle"></i>
+              <i class="slider__toggle slider__toggle--active"></i>
+              <i class="slider__toggle"></i>
+            </div>
           </div>
   			</section>
   			<section class="contacts">
-  				<h2 class="contacts__title">Остались вопросы? Свяжитесь с нами!</h2>
+  				<h2 class="contacts__title">Остались вопросы?<br> Свяжитесь с нами!</h2>
   				<ul class="contacts__list">
   					<li class="contacts__item">
-  						<b>Звоните</b>
+  						<b>Звоните:</b>
   						<a href="tel:+78125556666" class="contacts__link">+7 (812) 555-66-66</a>
   					</li>
   					<li class="contacts__item">
-  						<b>Пишите</b>
+  						<b>Пишите:</b>
   						<a href="mailto:#" class="contacts__link">mail@htmlacademy.ru</a>
   					</li>
   					<li class="contacts__item">
-  						<b>Приезжайте в гости</b>
-  						<a href="#" class="contacts__link"></a>
+  						<b>Приезжайте в гости:</b>
+  						<a class="contacts__link">ул. Большая<br>Конюшенная, 19/8</a>
   					</li>
   				</ul>
-  				<div class="map">
+  				<div class="contacts__map">
   					<img src="img/map.jpeg" alt="" width="" height="">
   				</div>
   			</section>

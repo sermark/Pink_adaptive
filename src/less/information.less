@@ -2,6 +2,7 @@
 	.flexbox();
 	width: 100%;
 	flex-wrap: wrap;
+    background-image: linear-gradient(175deg, #fff 24%, #f2f2f2 24%);
 }
 
 .information__title {
@@ -24,7 +25,6 @@
 
 .information__items{
 	width: 100%;
-	height: auto;
 	text-align: center;
 }
 
@@ -70,9 +70,6 @@
 
 .information__image {
 	display: inline-block;
-	width: 157px; // временно
-	height: 277px; // временно
-	background-color: grey; // временно
 }
 
 .information__image:not(:last-child){
@@ -80,9 +77,19 @@
 }
 
 @media @tablet-widths{
+
+	.information{
+		background-image: linear-gradient(175deg, #fff 38%, #f2f2f2 38%);
+	}
+
 	.information__title{
+		margin-bottom: 50px;
 		font-size: 40px;
 		line-height: 52px; 
+	}
+
+	.information__list{
+		padding-top: 70px;
 	}
 
 	.information__title span{
@@ -100,6 +107,10 @@
 		text-align: left;
 	}
 
+	.information__item:last-child{
+		margin-bottom: 0;
+	}
+
 	.information__images{
 		width: 50%;
 		order: 2;
@@ -113,7 +124,12 @@
 @media @desktop-widths{
 	.information {
 		flex-direction: column;
+		background-image: linear-gradient(175deg, #fff 43%, #f2f2f2 43%);
+	}
 
+	.information__title {
+		margin-top: 80px;
+		margin-bottom: 80px;
 	}
 
 	.information__image:not(:last-child){
@@ -125,7 +141,6 @@
 		margin-left: 11%;
 		margin-right: 11%;
 		text-align: center;
-		margin-top: 50px;
 	}
 
 	.information__images{
