@@ -287,7 +287,16 @@
   					</li>
   				</ul>
   				<div class="contacts__map">
-  					<img src="img/map.jpeg" alt="" width="" height="">
+  					<picture>
+                <source
+                  media="(min-width: 960px)"
+                  srcset="img/bg-map-desktop@1x.jpg">
+                <source
+                  media="(min-width: 700px)"
+                  srcset="img/bg-map-tablet@1x.jpg">   
+                <img
+                  src="img/bg-map-mobile@1x.png" alt="">
+              </picture>
   				</div>
   			</section>
   		</main>
