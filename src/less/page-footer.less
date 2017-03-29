@@ -4,15 +4,135 @@
 	}
 }	
 
-.page-footer{
-	.flexbox();
-	width: 100%;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+@media @tablet-widths{
+
+	.page-footer{
+		.flexbox();
+		width: 100%;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+	
+	.page-footer__logo{
+		margin-left: 5.5%
+	}
+
+	.page-footer__logo a{
+		display: block;
+		height: 100%;
+		&:hover{
+			.page-footer__logo--pink path{
+			fill:#d22856;
+			}
+		}
+		&:active{
+			.page-footer__logo--pink path{
+				fill:#bec2c7;
+			}
+			.page-footer__logo--glasses{
+				fill: #f4cad5;	
+			}			
+		}
+	}
+
+	.page-footer__copyright{
+		font-size: 0;
+		margin-right: 5.5%;
+	}
+
+	.page-footer__text{
+		display: inline-block;
+		margin-right: 10px;
+		font-family: "OpenSans Light", sans-serif;
+		font-size: 14px;
+		line-height: 18px;
+		font-weight: normal;
+		color: #283645;
+	}
+
+	.page-footer__copyright-link{
+		display: inline-block;
+		padding-top: 10px;
+		&:hover{
+			.page-footer__copyright-link--logo{
+				fill:#283645;
+			}
+		}
+		&:active{
+			.page-footer__copyright-link--logo{
+				fill:#bec2c7;
+			}
+		}
+	}
+
+	//.page-footer div {
+	//	margin-left: 5.5%;
+	//	margin-right: 5.5%;
+	//}
+
+	.page-footer__social{
+		font-size: 0;
+		flex-grow: 1;
+		text-align: center;
+	}
+
+	.social__link{
+		display: inline-block;
+		width: 44px;
+		height: 44px;
+		border: 3px solid #e9ebec;
+		border-radius: 50%;
+		margin-right: 15px;
+		background-repeat: no-repeat;
+		background-position: center;
+		&:last-child{
+			margin-right: 0;
+		}
+		&--tw{
+			background-image: url("../img/icon-twitter.svg");
+			&:active{
+				background-image: url("../img/icon-twitter_down.svg");
+			}
+		}
+		&--fb{
+			background-image: url("../img/icon-facebook.svg");
+			&:active{
+				background-image: url("../img/icon-facebook_down.svg");
+			}
+		}
+		&--youtube{
+			background-image: url("../img/icon-youtube.svg");
+			&:active{
+				background-image: url("../img/icon-youtube_down.png");
+			}
+		}
+		&:hover{
+			border-color: #283645;
+		}
+		&:active{
+			border-color: #e9ebec;
+		}
+	}
+
+	.page-footer__logo--desktop{
+		display: none;
+	}
+	
+	
 }
 
-.page-footer div {
-	margin-left: 5.5%;
-	margin-right: 5.5%;
-	height: 30px;
+@media @desktop-widths{
+	.page-footer__logo--desktop{
+		display: inline;
+	}
+
+	.page-footer__logo--tablet{
+		display: none;
+	}
+	.page-footer__text{
+		font-size: 18px;
+	}
 }
+
