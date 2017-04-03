@@ -26,7 +26,7 @@
         	</div>
         	<nav class="main-nav main-nav--closed main-nav--no-js">
         		<button class="main-nav__toogle" type="button">Открыть меню</button>
-            <div class="main-nav__wrapper">
+            <div class="main-nav__wrapper main-nav__wrapper--closed">
         			<ul class="main-nav__list">
         				<li class="main-nav__item">
         					<a>Главная</a>
@@ -385,36 +385,58 @@
 
       myMap.geoObjects.add(myPlacemark);
       // myMap.behaviors.disable('scrollZoom');
-     
-
-      //----------------------------------------------------
-      var slide_left = document.querySelector('.slider__control--prev'),
-          slide_right = document.querySelector('.slider__control--next'),
-          total = document.querySelectorAll('.reviews__list .reviews__item'),
-          idx = 0; // Индекс текущего слайда.
-
-      slide_right.addEventListener('click', moveLeft);
-      function moveLeft(){
-       
-        total[idx].className = "reviews__item"; // Скрываем текущий слайд
-        idx = (idx+1)%total.length;
-        total[idx].className = "reviews__item reviews__item--active"; // Инкрементируем индекс и показываем следующий слайд
-              //slides[currentSlide].className = 'slide';
-              //currentSlide = (currentSlide+1)%slides.length;
-              //slides[currentSlide].className = 'slide showing';
-
-      }
-
-        //Аналогично, только для левой стрелки
-      slide_left.addEventListener('click', moveRight);
-      function moveRight(){
-        
-        total[idx].className = "reviews__item"; // Скрываем текущий слайд
-        idx = (idx-1)%total.length;
-        total[idx].className = "reviews__item reviews__item--active";
-      }  
-
       });
+    var slide_left = document.querySelector('.slider__control--prev'),
+          slide_right = document.querySelector('.slider__control--next'),
+          slides = document.querySelectorAll('.reviews__list .reviews__item'),
+          currentSlide = 0; // Индекс текущего слайда.
+          
+          function nextSlide() {
+            goToSlide(currentSlide+1);
+          };
+
+          function previousSlide() {
+            goToSlide(currentSlide-1);
+          };
+
+          function goToSlide(n) {
+              slides[currentSlide].className = 'reviews__item';
+              currentSlide = (n+slides.length)%slides.length;
+              slides[currentSlide].className = 'reviews__item reviews__item--active';
+          };
+
+          slide_right.onclick = function() {
+              nextSlide();
+          };
+
+          slide_left.onclick = function() {
+              previousSlide();
+          };
+
+          //--------------------------------------------------------------------
+
+          var navMain = document.querySelector('.main-nav');
+          var navToogle = document.querySelector('.main-nav__toogle');
+          var navWrapper = document.querySelector('.main-nav__wrapper');
+
+          navMain.classList.remove('main-nav--no-js');
+
+          navToogle.addEventListener('click', function (){
+            if (navMain.classList.contains('main-nav--closed') && navWrapper.classList.contains('main-nav__wrapper--closed')) {
+              navMain.classList.remove('main-nav--closed');
+              navMain.classList.add('main-nav--opened');
+              navWrapper.classList.remove('main-nav__wrapper--closed');
+              navWrapper.classList.add('main-nav__wrapper--opened');
+            }
+            else {
+              navMain.classList.add('main-nav--closed');
+              navMain.classList.remove('main-nav--opened');
+              navWrapper.classList.add('main-nav__wrapper--closed');
+              navWrapper.classList.remove('main-nav__wrapper--opened');
+            }
+          });
+
+
   </script>
 	</body>
 </html>

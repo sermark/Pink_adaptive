@@ -30,7 +30,7 @@
 //}
 
 .main-nav{
-	width: 50%;
+	width: 100%;
 	//position: relative;
 	order: 3;
 }
@@ -70,7 +70,7 @@
 
 .main-nav--opened .main-nav__toogle{
 	top: 20px;
-	right: 20px;
+	right: 30px;
 
 		&::before,
 		&::after {
@@ -95,7 +95,14 @@
 
 .main-nav__wrapper{
 	width: 100%;
-	display: none;
+
+	&--closed{
+		display: none;
+	}
+
+	&--opened{
+		display: block;
+	}
 }
 
 .main-nav__list {
@@ -151,7 +158,7 @@
 
 	.main-nav--opened .main-nav__toogle::before,
 	.main-nav--opened .main-nav__toogle::after{
-		top: 20px;
+		top: 33px;
 		right: 20px;
 	}
 }
