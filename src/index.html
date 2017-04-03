@@ -183,12 +183,8 @@
             <i class="slider__toggle"></i>
           </div>
           <div class="slider__controls  reviews__controls">
-            <a class="slider__control  slider__control--prev">
-              <img src="img/icon-review-arrow-left.svg" width="22" height="41">
-            </a>
-            <a class="slider__control  slider__control--next">
-              <img src="img/icon-review-arrow-right.svg" width="22" height="41">
-            </a>
+            <a class="slider__control  slider__control--prev"></a>
+            <a class="slider__control  slider__control--next"></a>
           </div>
   
   			</section>
@@ -287,7 +283,10 @@
   					</li>
   				</ul>
   				<div class="contacts__map">
-  				  <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=z4fdQUmPv_wDcXa8nUP6qxs24bsXk7JB&amp;lang=ru_RU&amp;sourceType=constructor"></script>
+            <svg class="contacts__map-decorator" version="1.0" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595.28px" height="61.905px" viewBox="0 0 595.28 61.905" enable-background="new 0 0 595.28 61.905" xml:space="preserve">
+              <polygon fill="#ffffff" points="297.64,61.905 0,0 595.28,0 "/>
+            </svg>
+  				  <div id="map"></div>
   				</div>
   			</section>
   		</main>
@@ -349,5 +348,73 @@
           </a>
   			</div>
   		</footer>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script>
+      "use strict";
+
+  
+   var myMap;
+   var myPlacemark;
+  
+
+  
+   ymaps.ready(function() {
+      myMap = new ymaps.Map('map', {
+            center: [59.939000, 30.321375],
+            zoom: 16,
+            controls: ['zoomControl']
+         }, {
+            searchControlProvider: 'yandex#search'
+           }),
+         myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
+            hintContent: 'Pink',
+            //balloonContent: 'img/pin.png'
+         }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'img/icon-map-marker.svg',
+            // Размеры метки.
+            iconImageSize: [35, 35],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-35, -35]
+         });
+
+      myMap.geoObjects.add(myPlacemark);
+      // myMap.behaviors.disable('scrollZoom');
+     
+
+      //----------------------------------------------------
+      var slide_left = document.querySelector('.slider__control--prev'),
+          slide_right = document.querySelector('.slider__control--next'),
+          total = document.querySelectorAll('.reviews__list .reviews__item'),
+          idx = 0; // Индекс текущего слайда.
+
+      slide_right.addEventListener('click', moveLeft);
+      function moveLeft(){
+       
+        total[idx].className = "reviews__item"; // Скрываем текущий слайд
+        idx = (idx+1)%total.length;
+        total[idx].className = "reviews__item reviews__item--active"; // Инкрементируем индекс и показываем следующий слайд
+              //slides[currentSlide].className = 'slide';
+              //currentSlide = (currentSlide+1)%slides.length;
+              //slides[currentSlide].className = 'slide showing';
+
+      }
+
+        //Аналогично, только для левой стрелки
+      slide_left.addEventListener('click', moveRight);
+      function moveRight(){
+        
+        total[idx].className = "reviews__item"; // Скрываем текущий слайд
+        idx = (idx-1)%total.length;
+        total[idx].className = "reviews__item reviews__item--active";
+      }  
+
+      });
+  </script>
 	</body>
 </html>

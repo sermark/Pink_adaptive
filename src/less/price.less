@@ -62,8 +62,9 @@
 	font-weight: normal;
 	color: @brand-color;
 	text-transform: uppercase;
-
 }
+
+
 
 
 @media @tablet-widths{
@@ -114,6 +115,60 @@
 
 	.price .slider__toggles{
 		display: none;
+	}
+
+	.price__marker{
+		display: block;
+		margin:0 auto;
+		position: relative;
+		width: 36px;
+		height: 36px;
+
+		&--yes::before{
+			display: block;
+			content: "";
+			position: absolute;
+			top:18px;
+			left:11px;
+			width: 28px;
+			height: 3px;
+			background-color: #3dc644;
+			transform: rotate(-45deg);
+		}
+
+		&--yes::after{
+			display: block;
+			content: "";
+			position: absolute;
+			top:16px;
+			left:9px;
+			width: 3px;
+			height: 15px;
+			background-color: #3dc644;
+			transform: rotate(-45deg)
+		}
+
+		&--no::after{
+			display: block;
+			content: "";
+			position: absolute;
+			top:16px;
+			width: 35px;
+			height: 3px;
+			background-color: #f25b26;
+			transform: rotate(45deg);
+		}
+
+		&--no::before{
+			display: block;
+			content: "";
+			position: absolute;
+			top:16px;
+			width: 35px;
+			height: 3px;
+			background-color: #f25b26;
+			transform: rotate(-45deg);
+		}
 	}
 }
 

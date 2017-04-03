@@ -45,14 +45,32 @@
 		height: 100%;
 	}
 	.slider__control{
+		display: block;
+		box-sizing: border-box;
+		height: 30px;
+		width: 30px;
+		border-top:3px solid #bec2c7;
+		border-left: 3px solid #bec2c7;
 		position: absolute;
 		top: 57%;
 		cursor: pointer;
+
+		&:hover{
+			border-color:#7e868f;
+		}
+
+		&:active{
+			border-color: rgba(190, 194, 199, 0.5);
+		}
+
 		&--prev{
 			left: 11%;
+			transform: rotate(-45deg);
 		}
 		&--next{
 			right: 11%;
+			transform: rotate(-225deg);
 		}
 	}
+	
 }
