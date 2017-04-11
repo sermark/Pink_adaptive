@@ -138,6 +138,14 @@ module.exports = function(grunt) {
           spawn: false
         },
       },
+      // следить за файлами js
+      js:{
+        files:['src/js/*.js'],
+        tasks: ['copy:js'],
+        options:{
+          spawn: false,
+        },
+      },
       // следить за файлами разметки
       html: {
         // за фактом с сохранения каких файлов следить

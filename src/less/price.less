@@ -25,6 +25,12 @@
 	border: 2px solid #e5e5e5;
 }
 
+.price__name--hit{
+	background-image: url("../img/hit.png");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
 .price__name-title{
 	display: block;
 	padding-top: 20px;
@@ -64,6 +70,61 @@
 	text-transform: uppercase;
 }
 
+.price__marker{
+		display:inline;
+		margin:0 auto;
+		position: relative;
+		width: 36px;
+		height: 36px;
+
+		&--yes::before{
+			display: block;
+			content: "";
+			position: absolute;
+			top:-30px;
+			left:230px;
+			width: 28px;
+			height: 3px;
+			background-color: #3dc644;
+			transform: rotate(-45deg);
+		}
+
+		&--yes::after{
+			display: block;
+			content: "";
+			position: absolute;
+			top:-30px;
+			left:228px;
+			width: 3px;
+			height: 15px;
+			background-color: #3dc644;
+			transform: rotate(-45deg)
+		}
+
+		&--no::after{
+			display: block;
+			content: "";
+			position: absolute;
+			top: -33px;
+			left: 218px;
+			width: 35px;
+			height: 3px;
+			background-color: #f25b26;
+			transform: rotate(45deg);
+		}
+
+		&--no::before{
+			display: block;
+			content: "";
+			position: absolute;
+			top: -33px;
+			left: 218px;
+			width: 35px;
+			height: 3px;
+			background-color: #f25b26;
+			transform: rotate(-45deg);
+		}
+	}
 
 
 
@@ -83,7 +144,7 @@
 
 	.price__items{
 		width: 100%;
-		margin-left: auto;
+		margin-left: auto !important;
 	}
 
 	.price__items tr:first-child{
@@ -119,55 +180,25 @@
 
 	.price__marker{
 		display: block;
-		margin:0 auto;
-		position: relative;
-		width: 36px;
-		height: 36px;
 
 		&--yes::before{
-			display: block;
-			content: "";
-			position: absolute;
 			top:18px;
 			left:11px;
-			width: 28px;
-			height: 3px;
-			background-color: #3dc644;
-			transform: rotate(-45deg);
 		}
 
 		&--yes::after{
-			display: block;
-			content: "";
-			position: absolute;
 			top:16px;
 			left:9px;
-			width: 3px;
-			height: 15px;
-			background-color: #3dc644;
-			transform: rotate(-45deg)
 		}
 
 		&--no::after{
-			display: block;
-			content: "";
-			position: absolute;
 			top:16px;
-			width: 35px;
-			height: 3px;
-			background-color: #f25b26;
-			transform: rotate(45deg);
+			left: 0;
 		}
 
 		&--no::before{
-			display: block;
-			content: "";
-			position: absolute;
 			top:16px;
-			width: 35px;
-			height: 3px;
-			background-color: #f25b26;
-			transform: rotate(-45deg);
+			left: 0;
 		}
 	}
 }

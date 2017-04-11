@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
     	<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"> !-->
     	<link href="css/normalize.css" rel="stylesheet">
-    	<link href="css/style.css" rel="stylesheet">
+    	<link href="css/style.min.css" rel="stylesheet">
     	<title>Pink</title>
   	</head>
 
@@ -155,21 +155,21 @@
 
   			<section class="reviews">
   				<ul class="reviews__list slider">
-  					<li class="reviews__item slider__item reviews__item--active">
+  					<li class="reviews__item slider__item reviews__item--active" data="1">
   						<div class="reviews__author-name">Николай Петров</div>
   						<div class="reviews__author-addition">25 лет, водитель трамвая</div>
   						<p class="reviews__quote">
                 <span class="reviews__quote  reviews__quote--hidden">«</span>Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!<span class="reviews__quote  reviews__quote--hidden">»</span>
   						</p>
   					</li>
-  					<li class="reviews__item slider__item">
+  					<li class="reviews__item slider__item" data="2">
   						<div class="reviews__author-name">Петр Николаевский</div>
   						<div class="reviews__author-addition">45 лет, преподаватель</div>
   						<p class="reviews__quote">
                 <span class="reviews__quote  reviews__quote--hidden">«</span>Осень – не время грустить! Преображаются леса и парки, воздух наполняется ароматами прелой листвы, настроение становится по-осеннему философским и утонченным.<span class="reviews__quote  reviews__quote--hidden">»</span>
   						</p>
   					</li>
-  					<li class="reviews__item slider__item">
+  					<li class="reviews__item slider__item" data="3">
   						<div class="reviews__author-name">Марк Угольков</div>
   						<div class="reviews__author-addition">28 лет, любитель</div>
   						<p class="reviews__quote">
@@ -178,9 +178,9 @@
   					</li>
   				</ul>
           <div class="slider__toggles">
-            <i class="slider__toggle  slider__toggle--active"></i>
-            <i class="slider__toggle"></i>
-            <i class="slider__toggle"></i>
+            <i class="slider__toggle  slider__toggle--active" data="1"></i>
+            <i class="slider__toggle" data="2"></i>
+            <i class="slider__toggle" data="3"></i>
           </div>
           <div class="slider__controls  reviews__controls">
             <a class="slider__control  slider__control--prev"></a>
@@ -260,9 +260,9 @@
     					</tr>
     				</table>
             <div class="slider__toggles">
-              <i class="slider__toggle"></i>
-              <i class="slider__toggle slider__toggle--active"></i>
-              <i class="slider__toggle"></i>
+              <i class="slider__toggle" data = "1"></i>
+              <i class="slider__toggle slider__toggle--active" data = "2"></i>
+              <i class="slider__toggle" data = "3"></i>
             </div>
           </div>
   			</section>
@@ -350,93 +350,6 @@
   		</footer>
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script>
-      "use strict";
-
-  
-   var myMap;
-   var myPlacemark;
-  
-
-  
-   ymaps.ready(function() {
-      myMap = new ymaps.Map('map', {
-            center: [59.939000, 30.321375],
-            zoom: 16,
-            controls: ['zoomControl']
-         }, {
-            searchControlProvider: 'yandex#search'
-           }),
-         myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
-            hintContent: 'Pink',
-            //balloonContent: 'img/pin.png'
-         }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: 'img/icon-map-marker.svg',
-            // Размеры метки.
-            iconImageSize: [35, 35],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-35, -35]
-         });
-
-      myMap.geoObjects.add(myPlacemark);
-      // myMap.behaviors.disable('scrollZoom');
-      });
-    var slide_left = document.querySelector('.slider__control--prev'),
-          slide_right = document.querySelector('.slider__control--next'),
-          slides = document.querySelectorAll('.reviews__list .reviews__item'),
-          currentSlide = 0; // Индекс текущего слайда.
-          
-          function nextSlide() {
-            goToSlide(currentSlide+1);
-          };
-
-          function previousSlide() {
-            goToSlide(currentSlide-1);
-          };
-
-          function goToSlide(n) {
-              slides[currentSlide].className = 'reviews__item';
-              currentSlide = (n+slides.length)%slides.length;
-              slides[currentSlide].className = 'reviews__item reviews__item--active';
-          };
-
-          slide_right.onclick = function() {
-              nextSlide();
-          };
-
-          slide_left.onclick = function() {
-              previousSlide();
-          };
-
-          //--------------------------------------------------------------------
-
-          var navMain = document.querySelector('.main-nav');
-          var navToogle = document.querySelector('.main-nav__toogle');
-          var navWrapper = document.querySelector('.main-nav__wrapper');
-
-          navMain.classList.remove('main-nav--no-js');
-
-          navToogle.addEventListener('click', function (){
-            if (navMain.classList.contains('main-nav--closed') && navWrapper.classList.contains('main-nav__wrapper--closed')) {
-              navMain.classList.remove('main-nav--closed');
-              navMain.classList.add('main-nav--opened');
-              navWrapper.classList.remove('main-nav__wrapper--closed');
-              navWrapper.classList.add('main-nav__wrapper--opened');
-            }
-            else {
-              navMain.classList.add('main-nav--closed');
-              navMain.classList.remove('main-nav--opened');
-              navWrapper.classList.add('main-nav__wrapper--closed');
-              navWrapper.classList.remove('main-nav__wrapper--opened');
-            }
-          });
-
-
-  </script>
+    <script src="js/script.js"></script>
 	</body>
 </html>
